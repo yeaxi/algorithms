@@ -9,7 +9,7 @@ class ColouredTriangles {
         private final Set<ColouredPoint> points = new HashSet<>();
 
         Triangle(ColouredPoint a, ColouredPoint b, ColouredPoint c) {
-            this.color = a.getColor();
+            this.color = a.getColour();
             points.add(a);
             points.add(b);
             points.add(c);
@@ -44,7 +44,7 @@ class ColouredTriangles {
         Set<Triangle> triangles = new HashSet<>();
         for (int i = 0; i < givenPoints.size(); i++) {
             ColouredPoint a = givenPoints.get(i);
-            amountByColor.putIfAbsent(a.getColor(), 0);
+            amountByColor.putIfAbsent(a.getColour(), 0);
             for (int j = i + 1; j < givenPoints.size(); j++) {
                 ColouredPoint b = givenPoints.get(j);
                 for (int k = j + 1; k < givenPoints.size(); k++) {
@@ -53,7 +53,7 @@ class ColouredTriangles {
                         continue;
                     }
                     triangles.add(new Triangle(a, b, c));
-                    amountByColor.computeIfPresent(a.getColor(), (key, val) -> val + 1);
+                    amountByColor.computeIfPresent(a.getColour(), (key, val) -> val + 1);
                 }
             }
         }
@@ -79,11 +79,11 @@ class ColouredTriangles {
     }
 
     private static boolean haveDifferentColors(ColouredPoint a, ColouredPoint b, ColouredPoint c) {
-        return !(a.getColor().equals(b.getColor()) && a.getColor().equals(c.getColor()));
+        return !(a.getColour().equals(b.getColour()) && a.getColour().equals(c.getColour()));
     }
 
     private static boolean onSameLine(ColouredPoint a, ColouredPoint b, ColouredPoint c) {
-        return a.getPos()[0] == b.getPos()[0] && a.getPos()[0] == c.getPos()[0]
-                || a.getPos()[1] == b.getPos()[1] && a.getPos()[1] == c.getPos()[1];
+        return a.getPosition()[0] == b.getPosition()[0] && a.getPosition()[0] == c.getPosition()[0]
+                || a.getPosition()[1] == b.getPosition()[1] && a.getPosition()[1] == c.getPosition()[1];
     }
 }

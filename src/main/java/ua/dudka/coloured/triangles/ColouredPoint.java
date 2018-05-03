@@ -4,20 +4,20 @@ import java.util.Arrays;
 import java.util.Objects;
 
 class ColouredPoint {
-    private final int[] pos;
-    private final String color;
+    private final int[] position;
+    private final String colour;
 
-    public ColouredPoint(final int[] pos, final String color) {
-        this.pos = pos;
-        this.color = color;
+    public ColouredPoint(final int[] position, final String colour) {
+        this.position = position;
+        this.colour = colour;
     }
 
-    public int[] getPos() {
-        return pos;
+    public int[] getPosition() {
+        return position;
     }
 
-    public String getColor() {
-        return color;
+    public String getColour() {
+        return colour;
     }
 
     @Override
@@ -25,19 +25,19 @@ class ColouredPoint {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ColouredPoint that = (ColouredPoint) o;
-        return Arrays.equals(pos, that.pos) &&
-                Objects.equals(color, that.color);
+        return Arrays.equals(position, that.position) &&
+                Objects.equals(colour, that.colour);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(color);
-        result = 31 * result + Arrays.hashCode(pos);
+        int result = Objects.hash(colour);
+        result = 31 * result + Arrays.hashCode(position);
         return result;
     }
 
     @Override
     public String toString() {
-        return "[" + Arrays.toString(pos) + "," + color + "]";
+        return "[" + Arrays.toString(position) + "," + colour + "]";
     }
 }
