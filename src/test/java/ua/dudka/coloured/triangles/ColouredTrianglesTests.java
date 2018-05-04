@@ -54,6 +54,13 @@ public class ColouredTrianglesTests {
                                         new ColouredPoint(new int[]{0, 2}, "red"),
                                         new ColouredPoint(new int[]{1, 0}, "red")),
                                 new TriangleResult(4, 1, 3, List.of("red"), 3)
+                        },
+                        {
+                                List.of(new ColouredPoint(new int[]{3, -4}, "blue"), new ColouredPoint(new int[]{-7, -1}, "red"), new ColouredPoint(new int[]{7, -6}, "green"),
+                                        new ColouredPoint(new int[]{2, 5}, "green"), new ColouredPoint(new int[]{1, -5}, "red"), new ColouredPoint(new int[]{1, 1}, "red"),
+                                        new ColouredPoint(new int[]{1, 7}, "red"), new ColouredPoint(new int[]{1, 4}, "red"), new ColouredPoint(new int[]{-3, -5}, "blue"),
+                                        new ColouredPoint(new int[]{4, 1}, "blue"),new ColouredPoint(new int[]{-4, 6}, "red")),
+                                new TriangleResult(11, 3, 17, List.of("red"), 16)
                         }
                 }
         );
