@@ -70,6 +70,7 @@ class ColouredTriangles {
                 maxColours.add(entry.getKey());
             }
         }
+        Collections.sort(maxColours);
 
         int nGivenPoints = givenPoints.size();
         int nGivenColours = amountByColor.size();
